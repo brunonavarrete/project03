@@ -1,0 +1,219 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+input,
+button {
+ font-family: 'Roboto', sans-serif;
+}
+
+body {
+  font: 1em/1.5;
+  color: #184f68;
+	background: #accbd9;
+}
+
+header {
+	text-align: center;  
+}
+
+h1 {
+	font-size: 2.5em;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+	margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ================================= 
+  Form Element Styles
+==================================== */
+
+form {
+	position:relative;
+	padding: .875em 1.875em 1.875em;
+	background: #85b5ca;
+}
+
+fieldset,
+legend,
+button {
+	padding: 0;
+	border: none;
+}
+
+fieldset {
+	margin-top: 1.5em;
+}
+
+legend,
+button {
+	font-size: 1.25em;	
+}
+
+legend {
+	font-weight: 500;
+	padding-top: .5em;
+	border-top: 2px solid #679cb3;
+	margin-bottom: 1.125em;
+}
+
+input[type="text"],
+input[type="email"],
+legend {
+	width: 100%;
+}
+
+label {
+	color: #000;
+	display: block;
+	margin-bottom: .5em;
+}
+
+input,
+select {
+	margin-bottom: 1.125em;	
+}
+
+input {
+	font-size: 1em;
+	font-weight: 500;
+	padding: .8em;
+	background: #c1deeb;
+	border: 2px solid #c1deeb;
+	outline: none;
+}
+
+input:focus {
+	background: #fff;
+	border-color: #5e97b0;
+	transition: border-color .4s, background-color .4s;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	display: inline-block;
+}
+
+button {
+	color: #fff;
+	padding: .55em 1.25em;
+	background: #22627e;
+	margin: 1.25em 0 .5em;
+	cursor: pointer;
+}
+
+button:hover {
+	background: #184c62;
+}
+
+/* ================================= 
+  Page Styles
+==================================== */
+
+.container {
+	margin: auto;
+	max-width: 680px;
+}
+
+.shirt div {
+	float: left;
+	margin-right: .85em;
+}
+
+.interests input {
+	margin-bottom: 0;
+}
+
+.credit-card {
+	margin-top: 1.25em;
+}
+
+/* ================================= 
+  Helper Classes
+==================================== */
+
+.is-hidden {
+	display: none;
+}
+
+.clearfix::after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 0) and (max-width: 679px) {
+	header {
+		padding: 2em 0;
+	}
+	button {
+		width: 100%;
+	}
+}
+
+@media (min-width: 680px) {
+	header {
+		padding: 4.65em 0 2.5em;
+	}
+	.col {
+		float: left;
+	}
+	.col + .col {
+		margin-left: 2.5%;
+	}
+	.col-3 {
+		width: 23%;
+	}
+	.col-6 {
+		width: 49%;
+	}
+}
+
+/* ====
+	input
+=== */
+	
+	input.empty {outline:solid 2px red;}
+	input.empty.missingAt,input.empty.afterAt {border-color:darkorange;}
+
+	label,legend {position:relative;}
+	label.disabled {opacity:0.6;}
+	label::after,legend::after {position:absolute;right:0;padding:3px 8px;color:#fff;font-size:13px;font-weight:normal;background-color:red;}
+
+	label[for="name"].empty::after {content:'C\'mon, you don\'t have a name?';}
+
+	label[for="mail"].empty::after {content:'We need an email...';}
+	label[for="mail"].missingAt::after {content:'... emails need @...';background-color:darkorange;}
+	label[for="mail"].afterAt::after {content:'... where you at?';background-color:darkorange;}
+
+	.activities.empty {outline:solid 2px red;}
+	.activities.empty legend::after {content:'No activities?';}
+
+	.credit-card > label {position:initial;}
+	.credit-card label.empty::after {content:'This be empty...';}
+	.credit-card label.cool::after {content:'This be cool...';position:absolute;right:0;padding:3px 8px;color:#fff;font-size:13px;font-weight:normal;background-color:green;}
+	.credit-card label.empty.tooShort::after {content:'This be short...';}
+	.credit-card label.empty.tooLong::after {content:'This be long...';}
+
+	form::after {position:absolute;left:180px;bottom:53px;padding:3px 8px;font-size:13px;font-weight:normal;background-color:#fff;}
+	form.missingFields::after {content:'You\'re missing some info, look for the red thingies! ^';color:red;}
+	
+	form.complete {background-color:#fff;}
+	form.complete input[type="text"],form.complete input[type="email"] {background-color:#fdfdfd;}
+	form.complete::after {content:'Yay! Great filling of this form, you!';color:green;}
+	form.complete {box-shadow:0 2px 5px lime;border:solid 1px lime;}
+	form.complete button {color:green;background-color:lime;}
+
+
